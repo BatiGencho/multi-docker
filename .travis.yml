@@ -12,7 +12,7 @@ script:
   - docker run -e CI=true evgenipirianov/react-test npm test
 
 # build the real images (do not specify Dockerfile as it is in the root)
-after_install:
+after_success:
   - docker build -t evgenipirianov/multi-client ./client
   - docker build -t evgenipirianov/multi-nginx  ./nginx
   - docker build -t evgenipirianov/multi-server ./server
